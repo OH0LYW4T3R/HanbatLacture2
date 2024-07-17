@@ -6,6 +6,7 @@ import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -20,4 +21,9 @@ public class Answer {
     private LocalDateTime createDate;
     @ManyToOne
     private Question question;
+    @ManyToOne
+    private SiteUser author;
+    private LocalDateTime modifyDate;
+    @ManyToMany
+    Set<SiteUser> voter;
 }

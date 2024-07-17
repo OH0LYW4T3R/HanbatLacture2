@@ -7,6 +7,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -22,5 +23,10 @@ public class Question {
     private LocalDateTime createDate;
     @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
     private List<Answer> answerList;
+    @ManyToOne
+    private SiteUser author;
+    private LocalDateTime modifyDate;
+    @ManyToMany
+    Set<SiteUser> voter;
 }
 

@@ -37,8 +37,10 @@ dependencies {
     testImplementation 'org.springframework.security:spring-security-test'
     runtimeOnly 'org.postgresql:postgresql'
     implementation 'org.postgresql:postgresql:42.6.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:3.0.0'
+    implementation 'org.commonmark:commonmark:0.18.2'
 }
 
 tasks.named('test') {
